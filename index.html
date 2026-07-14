@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uzair Ali, PhD — Research Scientist, Cell &amp; Metabolic Biology</title>
-<meta name="description" content="Uzair Ali, PhD — research scientist working on adipocyte biology, metabolic reprogramming, and neuromodulation. CV, publications, and research notes.">
+<title>Uzair Ali, PhD | Research Scientist, Neurometabolic Regulation</title>
+<meta name="description" content="Uzair Ali, PhD. Research scientist working on neurometabolic regulation, bridging adipocyte biology and neuromodulation. CV, publications, services, and research notes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -55,17 +55,17 @@
     position:sticky; top:0; z-index:100; background:rgba(245,244,238,0.92); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  .nav-wrap{max-width:920px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between;}
+  .nav-wrap{max-width:960px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between;}
   .brand{font-family:var(--display); font-weight:600; font-size:1.1rem; color:var(--ink); text-decoration:none;}
-  .links{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  .links{display:flex; gap:22px; list-style:none; margin:0; padding:0;}
   .links a{
-    text-decoration:none; color:var(--ink-soft); font-size:0.92rem; font-weight:500;
+    text-decoration:none; color:var(--ink-soft); font-size:0.9rem; font-weight:500;
     padding-bottom:3px; border-bottom:2px solid transparent; transition:border-color .15s, color .15s;
   }
   .links a:hover, .links a:focus-visible{color:var(--teal-dark); border-color:var(--gold);}
   .nav-toggle{display:none; background:none; border:1px solid var(--line); border-radius:8px; padding:8px 10px; font-size:1.1rem; cursor:pointer;}
 
-  @media (max-width:720px){
+  @media (max-width:800px){
     .links{
       position:absolute; top:100%; left:0; right:0; background:var(--paper); flex-direction:column;
       padding:16px 24px 24px; gap:14px; border-bottom:1px solid var(--line); display:none;
@@ -91,13 +91,12 @@
   .hero-slideshow{position:absolute; inset:0; z-index:0;}
   .hero-slideshow::after{
     content:""; position:absolute; inset:0; z-index:1;
-    background:linear-gradient(160deg, rgba(15,24,32,0.90), rgba(15,24,32,0.74));
+    background:linear-gradient(160deg, rgba(10,17,24,0.92), rgba(10,17,24,0.78));
   }
   .slide{
     position:absolute; inset:0; opacity:0; background-size:cover; background-position:center;
     animation:slideshow 30s infinite;
   }
-  /* Real conference photos -- add more .slide divs + rules the same way to include future ones */
   .slide.s1{animation-delay:0s;  background-image:url('gmd-poster-hero.jpg');}
   .slide.s2{animation-delay:6s;  background-image:url('podo-group-hero.jpg');}
   .slide.s3{animation-delay:12s; background-image:url('podo-talk-hero.jpg');}
@@ -110,15 +109,13 @@
     .slide{animation:none; opacity:0;}
     .slide.s1{opacity:1;}
   }
-  /* Slightly deeper scrim so white text stays readable over photos */
-  .hero-slideshow::after{background:linear-gradient(160deg, rgba(10,17,24,0.92), rgba(10,17,24,0.78));}
   .droplets-corner{position:absolute; right:20px; bottom:16px; width:130px; height:130px; z-index:1; opacity:0.32;}
 
-  .hero-content{position:relative; z-index:2; max-width:640px;}
+  .hero-content{position:relative; z-index:2; max-width:660px;}
   #hero .eyebrow{color:#CFE7E1;}
   #hero h1{font-size:clamp(2.4rem, 5vw, 3.4rem); line-height:1.05; margin-top:10px; color:#fff;}
   #hero .role{font-family:var(--display); font-style:italic; font-size:1.15rem; color:#E7BE7A; margin-top:10px;}
-  #hero p.lede{margin-top:18px; max-width:52ch; color:#DCE1E5; font-size:1.04rem;}
+  #hero p.lede{margin-top:18px; max-width:56ch; color:#DCE1E5; font-size:1.04rem;}
   .hero-meta{margin-top:10px; font-family:var(--mono); font-size:0.85rem; color:#B9C2C9;}
   .cta-row{display:flex; gap:14px; margin-top:28px; flex-wrap:wrap;}
   #hero .btn-secondary{border-color:#fff; color:#fff;}
@@ -146,6 +143,13 @@
     font-family:var(--mono); font-size:0.78rem; padding:6px 12px; border-radius:8px;
     background:var(--paper-dim); border:1px solid var(--line); color:var(--ink-soft);
   }
+  .research-interest{
+    margin:24px 0; padding:16px 20px; background:var(--paper-dim); border-left:3px solid var(--teal);
+    border-radius:8px;
+  }
+  .ri-label{display:block; font-family:var(--mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--teal-dark); font-weight:600;}
+  .ri-value{display:block; font-size:1rem; color:var(--ink); margin-top:4px;}
+  .ri-fun{display:block; font-size:0.88rem; color:var(--ink-soft); margin-top:6px; font-style:italic;}
 
   /* ---------- CV / timeline ---------- */
   .cv-actions{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;}
@@ -211,28 +215,15 @@
     background:var(--paper-dim); border:1px dashed var(--line); border-radius:10px; padding:14px 18px;
     font-size:0.88rem; color:var(--ink-soft); margin-bottom:26px;
   }
+  .gallery-subhead{font-family:var(--mono); font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin:40px 0 16px;}
   .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
   @media (max-width:760px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:480px){ .gallery-grid{grid-template-columns:1fr;} }
   .g-card{
     border-radius:14px; aspect-ratio:4/5; padding:16px; display:flex; flex-direction:column; justify-content:flex-end;
-    position:relative; overflow:hidden; border:1px solid var(--line);
+    position:relative; overflow:hidden; border:1px solid var(--line); transition:transform .15s ease;
   }
-  .g-card::before{
-    content:""; position:absolute; inset:0; opacity:0.9;
-  }
-  .g-card.photo::before{
-    background-size:cover; background-position:center;
-    background-image:var(--photo);
-    opacity:1;
-  }
-  .g-card.photo{ background:#000; }
-  .g-card.photo .g-cap::before{
-    content:""; position:absolute; left:-16px; right:-16px; bottom:-16px; height:130%;
-    background:linear-gradient(0deg, rgba(0,0,0,0.85), rgba(0,0,0,0));
-    z-index:-1;
-  }
-  .g-card.photo .g-cap{position:relative; padding:2px 0;}
+  .g-card::before{content:""; position:absolute; inset:0; opacity:0.9;}
   .g-card.p1::before{background:linear-gradient(155deg,#2F6E64,#1C2B39);}
   .g-card.p2::before{background:linear-gradient(155deg,#C68A33,#8a611f);}
   .g-card.p3::before{background:linear-gradient(155deg,#A63D46,#5c2126);}
@@ -240,9 +231,61 @@
   .g-card.p5::before{background:linear-gradient(155deg,#2F6E64,#C68A33);}
   .g-card.p6::before{background:linear-gradient(155deg,#8a611f,#1C2B39);}
   .g-card .g-icon{position:relative; z-index:1; opacity:0.85;}
-  .g-card .g-cap{position:relative; z-index:1; color:#fff;}
-  .g-card .g-cap .g-event{font-family:var(--display); font-weight:600; font-size:0.98rem; line-height:1.25;}
-  .g-card .g-cap .g-place{font-family:var(--mono); font-size:0.72rem; opacity:0.85; margin-top:4px;}
+  .g-card .g-cap{position:relative; z-index:2; color:#fff;}
+  .g-card .g-cap .g-event{font-family:var(--display); font-weight:600; font-size:0.96rem; line-height:1.25;}
+  .g-card .g-cap .g-place{font-family:var(--mono); font-size:0.7rem; opacity:0.85; margin-top:4px;}
+  .g-card.photo{background:#000; cursor:pointer;}
+  .g-card .bg-layer{position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1.2s ease;}
+  .g-card .bg-layer.visible{opacity:1;}
+  .g-card.photo::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:65%; z-index:1;
+    background:linear-gradient(0deg, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  }
+  .g-card.album:hover{transform:translateY(-3px);}
+  .count-pill{
+    position:absolute; top:12px; right:12px; z-index:2; background:rgba(0,0,0,0.55); color:#fff;
+    font-family:var(--mono); font-size:0.66rem; padding:3px 9px; border-radius:999px;
+  }
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(9,13,17,0.95); z-index:1000;
+    display:flex; align-items:center; justify-content:center; flex-direction:column; padding:40px 20px;
+  }
+  .lightbox[hidden]{display:none;}
+  .lb-img{max-width:min(90vw,1100px); max-height:65vh; object-fit:contain; border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+  .lb-caption{color:#fff; text-align:center; margin-top:18px; max-width:640px;}
+  .lb-title{font-family:var(--display); font-size:1.15rem; font-weight:600;}
+  .lb-place{font-family:var(--mono); font-size:0.76rem; color:#B9C2C9; margin-top:4px;}
+  .lb-photocap{font-size:0.9rem; color:#DCE1E5; margin-top:8px; font-style:italic;}
+  .lb-close{position:absolute; top:20px; right:24px; background:none; border:none; color:#fff; font-size:2.2rem; cursor:pointer; line-height:1;}
+  .lb-prev, .lb-next{
+    position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.3);
+    color:#fff; font-size:1.8rem; width:48px; height:48px; border-radius:50%; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lb-prev{left:16px;} .lb-next{right:16px;}
+  .lb-prev:hover, .lb-next:hover, .lb-close:hover{background:rgba(255,255,255,0.2);}
+  @media (max-width:600px){ .lb-prev,.lb-next{width:40px;height:40px; font-size:1.4rem;} }
+
+  /* ---------- Services ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:6px;}
+  @media (max-width:720px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{background:var(--paper-dim); border:1px solid var(--line); border-radius:var(--radius); padding:24px;}
+  .service-card h5{font-family:var(--display); font-size:1.08rem; font-weight:600; margin:0 0 10px; color:var(--ink);}
+  .service-card p{margin:0; font-size:0.92rem; color:var(--ink-soft); line-height:1.65;}
+  .service-cta{text-align:center; margin-top:34px;}
+
+  /* ---------- Booking ---------- */
+  .booking-form{display:grid; gap:16px; margin-top:8px;}
+  .booking-form label{display:flex; flex-direction:column; gap:6px; font-size:0.88rem; color:var(--ink-soft); font-weight:500;}
+  .booking-form input, .booking-form select, .booking-form textarea{
+    font-family:var(--body); font-size:0.95rem; padding:10px 12px; border-radius:8px;
+    border:1px solid var(--line); background:var(--card); color:var(--ink);
+  }
+  .booking-form textarea{resize:vertical;}
+  .booking-form button{justify-self:start;}
+  .booking-note{margin-top:18px; font-size:0.82rem; color:var(--ink-soft);}
 
   /* ---------- Blog ---------- */
   .post-card{
@@ -277,7 +320,7 @@
 
   /* ---------- Print (used for "Download / Print CV") ---------- */
   @media print{
-    header, footer.site-footer, #hero, #about, #publications, #gallery, #blog, #contact{display:none !important;}
+    header, footer.site-footer, #hero, #about, #publications, #gallery, #services, #booking, #blog, #contact{display:none !important;}
     body{background:#fff;}
     #cv{padding:0 !important;}
     .cv-actions{display:none !important;}
@@ -301,6 +344,7 @@
         <li><a href="#cv">CV</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -326,10 +370,10 @@
       <circle class="d4" cx="170" cy="160" r="13" fill="#fff" opacity="0.8"/>
     </svg>
     <div class="container hero-content">
-      <p class="eyebrow">Research Scientist · Cell &amp; Metabolic Biology</p>
+      <p class="eyebrow">Research Scientist · Neurometabolic Regulation</p>
       <h1>Uzair Ali, PhD</h1>
-      <p class="role">Turning white fat brown, one adipocyte at a time.</p>
-      <p class="lede">I study how cells reprogram their metabolism — how adipocytes switch between storing and burning energy, and how neurons respond to chemical and mechanical stimulation. My work moves between the bench (cell culture, viral vectors, confocal imaging) and the desk (RNA-seq, network pharmacology).</p>
+      <p class="role">Bridging metabolism and the nervous system.</p>
+      <p class="lede">I study how cells reprogram their metabolism, from adipocytes that switch between storing and burning energy to neurons that respond to chemical and mechanical stimulation. My work moves between the bench (cell culture, viral vectors, confocal imaging) and the desk (RNA-seq, network pharmacology).</p>
       <p class="hero-meta">Nuremberg, Germany</p>
       <div class="cta-row">
         <button class="btn btn-primary" onclick="window.print()">Download / Print CV</button>
@@ -345,16 +389,25 @@
         <p class="eyebrow">About</p>
         <h2>A bit about my work</h2>
       </div>
+
+      <div class="research-interest">
+        <span class="ri-label">Research interest</span>
+        <span class="ri-value">Neurometabolic regulation: the biology connecting metabolic reprogramming and neuronal signalling.</span>
+        <span class="ri-fun">In plainer terms: I like figuring out how to turn white fat brown, and how neurons decide when to fire.</span>
+      </div>
+
       <p style="max-width:68ch; color:var(--ink-soft); font-size:1.02rem;">
-        I'm a research scientist focused on cellular remodeling and functional reprogramming — particularly
-        how adipocytes switch between energy-storing and energy-burning states, how that connects to metabolic
-        disease, and how neurons respond to chemical and mechanical stimulation. My toolkit spans cell culture,
-        plasmid- and viral-vector-based gene delivery, gene expression analysis, confocal and calcium imaging,
-        and the statistical and bioinformatic analysis that turns those experiments into a story.
+        I'm a research scientist working at the junction of metabolic and neuro biology. Most of my published
+        work focuses on adipocytes, particularly how they switch between energy storing and energy burning
+        states, and how that connects to metabolic disease. Alongside this, my postdoctoral work on
+        neuromodulation gave me hands on experience with primary neuronal assays, viral gene delivery, and
+        calcium imaging in neurons. My toolkit spans cell culture, plasmid and viral vector gene delivery, gene
+        expression analysis, confocal and calcium imaging, and the statistical and bioinformatic analysis that
+        turns those experiments into a story.
       </p>
       <p style="max-width:68ch; color:var(--ink-soft); font-size:1.02rem;">
         I've worked in international, collaborative research environments across Italy, Sweden, Finland, and
-        Germany — coordinating projects and supervising junior researchers along the way. Since mid-2025 I've
+        Germany, coordinating projects and supervising junior researchers along the way. Since mid 2025 I've
         been building an independent research and consulting practice: peer reviewing for international
         journals, giving invited lectures on research careers and international academic pathways, and staying
         engaged with the wider scientific community through conferences and continued training.
@@ -386,7 +439,7 @@
       <p class="subhead">Education</p>
       <div class="timeline">
         <div class="t-item">
-          <div class="date">Jan 2020 – Jun 2023</div>
+          <div class="date">Jan 2020 to Jun 2023</div>
           <h4>Ph.D. in Biomedical Sciences and Biotechnology</h4>
           <div class="org">University of Udine, Italy</div>
           <p class="desc">Thesis: <em>Transcriptional Networks Involved in Adipogenic and Thermogenic Programming.</em>
@@ -395,15 +448,15 @@
           and therapeutic targets involved in adipocyte browning.</p>
         </div>
         <div class="t-item">
-          <div class="date">Feb 2016 – Jul 2018</div>
+          <div class="date">Feb 2016 to Jul 2018</div>
           <h4>M.Phil. in Biotechnology and Genetic Engineering</h4>
           <div class="org">University of Agriculture, Peshawar, Pakistan</div>
           <p class="desc">Thesis: <em>Inflammatory Genes Polymorphism in Rheumatic Heart Disease.</em>
-          A case-control genetic association study using PCR-based genotyping and statistical analysis to
+          A case control genetic association study using PCR based genotyping and statistical analysis to
           evaluate links between inflammatory gene variants and disease risk.</p>
         </div>
         <div class="t-item">
-          <div class="date">Sep 2011 – Aug 2015</div>
+          <div class="date">Sep 2011 to Aug 2015</div>
           <h4>B.S. (Hons) in Biotechnology</h4>
           <div class="org">University of Peshawar, Pakistan</div>
         </div>
@@ -412,22 +465,22 @@
       <p class="subhead">Experience</p>
       <div class="timeline">
         <div class="t-item">
-          <div class="date">Jul 2025 – Present</div>
+          <div class="date">Jul 2025 to Present</div>
           <h4>Independent Research Scientist &amp; Scientific Consultant</h4>
           <div class="org">Germany</div>
           <p class="desc">Peer review for international scientific journals; invited lectures for biotechnology
-          and life-sciences students on international academic pathways and research careers; freelance
+          and life sciences students on international academic pathways and research careers; freelance
           scientific consulting; ongoing conference participation and academic networking.</p>
         </div>
         <div class="t-item">
-          <div class="date">Dec 2023 – Jun 2025</div>
+          <div class="date">Dec 2023 to Jun 2025</div>
           <h4>Postdoctoral Research Associate</h4>
-          <div class="org">Dept. of Chemistry &amp; Pharmacy, Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany</div>
+          <div class="org">Dept. of Chemistry &amp; Pharmacy, Friedrich Alexander Universitat Erlangen Nurnberg, Germany</div>
           <p class="desc">Project: <strong>BRAINSTORM</strong> (EU Horizon EIC Pathfinder, Grant ID 101099355). Led
           experimental work on neuromodulation using primary neuronal assays, viral transduction, calcium imaging,
-          and ion-channel characterization; designed and optimized lentiviral constructs; coordinated project
+          and ion channel characterization; designed and optimized lentiviral constructs; coordinated project
           deliverables and consortium reporting; supervised MSc and PhD students and managed BSL-2 workflows;
-          developed an independent research line on human adipocyte metabolism resulting in a first-author
+          developed an independent research line on human adipocyte metabolism resulting in a first author
           publication.</p>
         </div>
       </div>
@@ -436,19 +489,19 @@
       <div class="visit-list">
         <div class="visit">
           <div class="date">Aug 2024</div>
-          <h5>Visiting Scientist — Faculty of Pharmacy, University of Helsinki, Finland</h5>
-          <p>Designed and constructed lentiviral vectors via Gibson Assembly (in-silico design and validation in
+          <h5>Visiting Scientist, Faculty of Pharmacy, University of Helsinki, Finland</h5>
+          <p>Designed and constructed lentiviral vectors via Gibson Assembly (in silico design and validation in
           SnapGene); optimized viral production and transduction workflows in HEK293 cells.</p>
         </div>
         <div class="visit">
-          <div class="date">Apr 2022 – Dec 2022</div>
-          <h5>Guest PhD Researcher — Dept. of Molecular Biosciences, Stockholm University, Sweden</h5>
-          <p>CombiGene's CGT2 project: viral- and plasmid-mediated gene delivery in adipocyte and hepatic models,
+          <div class="date">Apr 2022 to Dec 2022</div>
+          <h5>Guest PhD Researcher, Dept. of Molecular Biosciences, Stockholm University, Sweden</h5>
+          <p>CombiGene's CGT2 project: viral and plasmid mediated gene delivery in adipocyte and hepatic models,
           primary murine adipocyte isolation, and in vivo viral delivery studies.</p>
         </div>
         <div class="visit">
-          <div class="date">Jul 2017 – Aug 2019</div>
-          <h5>Research Intern — Pathology Dept., Khyber Teaching Hospital, Peshawar, Pakistan</h5>
+          <div class="date">Jul 2017 to Aug 2019</div>
+          <h5>Research Intern, Pathology Dept., Khyber Teaching Hospital, Peshawar, Pakistan</h5>
           <p>Clinical laboratory rotations across molecular biology, microbiology, histopathology, and clinical
           chemistry alongside Master's studies.</p>
         </div>
@@ -459,8 +512,8 @@
         <div class="skill-card">
           <h5>Lab &amp; Experimental</h5>
           <p>Primary adipocyte &amp; neuronal culture (hippocampal neurons, DRGs, BAT/WAT), immortalized lines
-          (HEK293, SGBS, HepG2), viral transfection/transduction, Gibson-assembly cloning, CRISPR-Cas9, RT-qPCR,
-          Western blot, confocal &amp; live-cell calcium imaging, rodent handling &amp; dissection (FELASA-certified),
+          (HEK293, SGBS, HepG2), viral transfection/transduction, Gibson assembly cloning, CRISPR-Cas9, RT-qPCR,
+          Western blot, confocal &amp; live cell calcium imaging, rodent handling &amp; dissection (FELASA certified),
           metabolic assays (Seahorse, Oroboros O2k, MTT, BODIPY/MitoTracker staining).</p>
         </div>
         <div class="skill-card">
@@ -476,26 +529,26 @@
 
       <p class="subhead">Courses &amp; training</p>
       <ul class="list-plain">
-        <li><span class="d">Aug 2025</span> Foundations of GMP — US Pharmacopeia</li>
-        <li><span class="d">May 2025</span> Project Management — Graduate Center of FAU, Erlangen</li>
-        <li><span class="d">Aug 2024</span> Laboratory Animal Science (FELASA cert., ref. 072/22F) — Humboldt University of Berlin</li>
-        <li><span class="d">Mar 2024</span> Animal Welfare Course Theory — FAU Erlangen</li>
-        <li><span class="d">Sep 2022</span> Introduction to Biostatistics &amp; Machine Learning using R — SciLifeLab, Uppsala University</li>
-        <li><span class="d">Aug 2022</span> Laboratory Animal Science — Rodents &amp; Lagomorphs — Karolinska Institute, Stockholm</li>
+        <li><span class="d">Aug 2025</span> Foundations of GMP, US Pharmacopeia</li>
+        <li><span class="d">May 2025</span> Project Management, Graduate Center of FAU, Erlangen</li>
+        <li><span class="d">Aug 2024</span> Laboratory Animal Science (FELASA cert., ref. 072/22F), Humboldt University of Berlin</li>
+        <li><span class="d">Mar 2024</span> Animal Welfare Course Theory, FAU Erlangen</li>
+        <li><span class="d">Sep 2022</span> Introduction to Biostatistics &amp; Machine Learning using R, SciLifeLab, Uppsala University</li>
+        <li><span class="d">Aug 2022</span> Laboratory Animal Science, Rodents &amp; Lagomorphs, Karolinska Institute, Stockholm</li>
         <li><span class="d">Feb 2022</span> CRISPR Everywhere: From Gene Therapy to Genome Editing of Viruses</li>
-        <li><span class="d">Jan 2022</span> Theory &amp; Practice in Transmission &amp; Scanning Electron Microscopy — University of Pisa</li>
-        <li><span class="d">Sep 2021</span> Live Cell Metabolic Assay — The Seahorse</li>
-        <li><span class="d">Apr 2021</span> Introduction to Confocal Microscopy — Theory &amp; Practice</li>
-        <li><span class="d">May 2016</span> Biosafety Training Workshop for Young Researchers — NAYS, Pakistan</li>
+        <li><span class="d">Jan 2022</span> Theory &amp; Practice in Transmission &amp; Scanning Electron Microscopy, University of Pisa</li>
+        <li><span class="d">Sep 2021</span> Live Cell Metabolic Assay, The Seahorse</li>
+        <li><span class="d">Apr 2021</span> Introduction to Confocal Microscopy, Theory &amp; Practice</li>
+        <li><span class="d">May 2016</span> Biosafety Training Workshop for Young Researchers, NAYS, Pakistan</li>
       </ul>
 
       <p class="subhead">Achievements &amp; awards</p>
       <ul class="award-list">
-        <li><strong>EU Horizon EIC Pathfinder–funded Postdoctoral Researcher</strong> — BRAINSTORM project</li>
-        <li><strong>PhD Scholarship</strong> — University of Udine</li>
-        <li><strong>Erasmus+ Traineeship</strong> — funded research stay at Stockholm University</li>
-        <li><strong>Laptop Award</strong> — Prime Minister of Pakistan, for academic excellence</li>
-        <li><strong>Best Presentation Prize</strong> — BMedCon'18, Khyber Medical University, Peshawar</li>
+        <li><strong>EU Horizon EIC Pathfinder funded Postdoctoral Researcher</strong>, BRAINSTORM project</li>
+        <li><strong>PhD Scholarship</strong>, University of Udine</li>
+        <li><strong>Erasmus+ Traineeship</strong>, funded research stay at Stockholm University</li>
+        <li><strong>Laptop Award</strong>, Prime Minister of Pakistan, for academic excellence</li>
+        <li><strong>Best Presentation Prize</strong>, BMedCon'18, Khyber Medical University, Peshawar</li>
       </ul>
     </div>
   </section>
@@ -505,7 +558,7 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Publications</p>
-        <h2>Peer-reviewed work</h2>
+        <h2>Peer reviewed work</h2>
         <p>Full text and citation details are linked via DOI.</p>
       </div>
 
@@ -523,7 +576,7 @@
       <div class="pub-card">
         <div class="pub-top">
           <p class="pub-title">Magnetite nanodiscs as vortex-enhanced MRI contrast agents: a novel approach in medical imaging</p>
-          <span class="pub-tag co">Co-author</span>
+          <span class="pub-tag co">Co author</span>
         </div>
         <p class="pub-meta">Koçar, E., Ferrauto, G., Nizami, S. B., Duran Toro, V., <strong>Ali, U.</strong>, Signorelli, L., Wasner, F., et al. (2026). <em>Nanoscale Advances</em>.</p>
         <a class="pub-doi" href="https://doi.org/10.1039/d5na01089f" target="_blank" rel="noopener">doi.org/10.1039/d5na01089f</a>
@@ -532,7 +585,7 @@
       <div class="pub-card">
         <div class="pub-top">
           <p class="pub-title">Graphene nanoplatelets–polythiophene nanocomposites for efficient dye degradation and cytotoxic activity against glioma cells</p>
-          <span class="pub-tag co">Co-author</span>
+          <span class="pub-tag co">Co author</span>
         </div>
         <p class="pub-meta">Noreen, M.*, <strong>Ali, U.</strong>, &amp; Khattak, R. (2026). <em>Preprints</em>.</p>
         <a class="pub-doi" href="https://doi.org/10.20944/preprints202606.0684.v1" target="_blank" rel="noopener">doi.org/10.20944/preprints202606.0684.v1</a>
@@ -550,7 +603,7 @@
       <div class="pub-card">
         <div class="pub-top">
           <p class="pub-title">Transcriptomic analysis of Simpson Golabi Behmel syndrome cells during differentiation exhibit BAT-like function</p>
-          <span class="pub-tag co">Co-author</span>
+          <span class="pub-tag co">Co author</span>
         </div>
         <p class="pub-meta">Colitti, M., <strong>Ali, U.</strong>, Wabitsch, M., &amp; Tews, D. (2022). <em>Tissue and Cell</em>, 77, 101822.</p>
         <a class="pub-doi" href="https://doi.org/10.1016/j.tice.2022.101822" target="_blank" rel="noopener">doi.org/10.1016/j.tice.2022.101822</a>
@@ -566,10 +619,10 @@
       </div>
       <div class="pub-card">
         <div class="pub-top">
-          <p class="pub-title">Differential inhibition of human and mouse UCP1 in liver mitochondria reveals species-specific regulatory mechanisms</p>
-          <span class="pub-tag co">Co-author</span>
+          <p class="pub-title">Differential inhibition of human and mouse UCP1 in liver mitochondria reveals species specific regulatory mechanisms</p>
+          <span class="pub-tag co">Co author</span>
         </div>
-        <p class="pub-meta">Shabalina, I. G., et al. (2026, in preparation). <strong>Ali, U.</strong>, co-author.</p>
+        <p class="pub-meta">Shabalina, I. G., et al. (2026, in preparation). <strong>Ali, U.</strong>, co author.</p>
       </div>
     </div>
   </section>
@@ -579,71 +632,80 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Gallery</p>
-        <h2>Conferences &amp; academic activities</h2>
+        <h2>Conferences and academic activities</h2>
       </div>
-      <p class="gallery-note">A few more placeholders below are still waiting for photos — send them over
-      whenever you have them and I'll drop them in the same way.</p>
+      <p class="gallery-note">Each card below is a small album. Click one to browse every photo from that event.
+      A couple are still waiting for their first photo, they will fill in after the next trip.</p>
 
-      <div class="gallery-grid">
-        <div class="g-card photo" style="--photo:url('podo-ownposter-thumb.jpg')">
-          <div class="g-cap">
-            <div class="g-event">Prevention of Childhood Obesity: Body, Brain &amp; Society — presenting my poster</div>
-            <div class="g-place">Novo Nordisk Foundation · Copenhagen · Mar 2026</div>
-          </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+
+      <p class="gallery-subhead">Research snapshots</p>
+      <div class="gallery-grid" id="standaloneGrid"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>How I can help</h2>
+        <p>Independent consulting alongside my research, for labs, students, and biotech teams.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h5>Research Writing</h5>
+          <p>Manuscript drafting and editing, grant and fellowship proposals, thesis chapters, and conference
+          abstracts, drawing on my own experience publishing in peer reviewed journals as first author.</p>
         </div>
-        <div class="g-card photo" style="--photo:url('podo-talk-thumb.jpg')">
-          <div class="g-cap">
-            <div class="g-event">Prevention of Childhood Obesity: Body, Brain &amp; Society — conference session</div>
-            <div class="g-place">Novo Nordisk Foundation · Copenhagen · Mar 2026</div>
-          </div>
+        <div class="service-card">
+          <h5>Biological Data Analysis</h5>
+          <p>RNA seq analysis, differential expression, pathway enrichment, and statistical analysis for cell
+          and molecular biology data, along with clear, publication ready figures.</p>
         </div>
-        <div class="g-card photo" style="--photo:url('podo-group-thumb.jpg')">
-          <div class="g-cap">
-            <div class="g-event">Prevention of Childhood Obesity: Body, Brain &amp; Society — group photo</div>
-            <div class="g-place">Novo Nordisk Foundation · Copenhagen · Mar 2026</div>
-          </div>
-        </div>
-        <div class="g-card photo" style="--photo:url('gmd-poster-thumb.jpg')">
-          <div class="g-cap">
-            <div class="g-event">Genomic Mechanisms of Disease — poster session</div>
-            <div class="g-place">Novo Nordisk Foundation · Copenhagen · May 2025</div>
-          </div>
-        </div>
-        <div class="g-card photo" style="--photo:url('podo-reception-thumb.jpg')">
-          <div class="g-cap">
-            <div class="g-event">Genomic Mechanisms of Disease — evening reception</div>
-            <div class="g-place">Novo Nordisk Foundation · Copenhagen · May 2025</div>
-          </div>
-        </div>
-        <div class="g-card p3">
-          <svg class="g-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>
-          <div class="g-cap">
-            <div class="g-event">BATENERGY Conference 2025</div>
-            <div class="g-place">University of Bonn · Mar 2025</div>
-          </div>
-        </div>
-        <div class="g-card p4">
-          <svg class="g-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>
-          <div class="g-cap">
-            <div class="g-event">CPHBAT 2022 — Heterogeneity &amp; Plasticity of Adipose Tissue</div>
-            <div class="g-place">Copenhagen · Jun 2022</div>
-          </div>
-        </div>
-        <div class="g-card p5">
-          <svg class="g-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>
-          <div class="g-cap">
-            <div class="g-event">1st International BioDesign Research Conference</div>
-            <div class="g-place">Virtual · Dec 2020</div>
-          </div>
-        </div>
-        <div class="g-card p6">
-          <svg class="g-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>
-          <div class="g-cap">
-            <div class="g-event">BMedCon'18 — 1st Int'l Basic Medical Science Conference</div>
-            <div class="g-place">Khyber Medical University, Peshawar · Oct 2018 · Best Presentation Award</div>
-          </div>
+        <div class="service-card">
+          <h5>International Career Path Guidance</h5>
+          <p>One on one guidance for students and early career researchers navigating PhD applications,
+          funding, and relocation across Europe, based on my own path through Pakistan, Italy, Sweden,
+          Finland, and Germany.</p>
         </div>
       </div>
+      <div class="service-cta">
+        <a class="btn btn-primary" href="#booking">Book an appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" style="background:var(--paper-dim);">
+    <div class="container" style="max-width:640px;">
+      <div class="section-head">
+        <p class="eyebrow">Booking</p>
+        <h2>Book an appointment</h2>
+        <p>Tell me a little about what you need, and I will get back to you by email.</p>
+      </div>
+      <form id="bookingForm" class="booking-form">
+        <label>Name
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Service needed
+          <select name="service">
+            <option>Research Writing</option>
+            <option>Biological Data Analysis</option>
+            <option>International Career Path Guidance</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea name="message" rows="5" required placeholder="A short note about what you need help with"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send request</button>
+      </form>
+      <p class="booking-note">This opens a pre filled email in your own mail app. This site does not run its
+      own server, so nothing is stored or sent anywhere until you press send there.</p>
     </div>
   </section>
 
@@ -661,14 +723,15 @@
         <h3>Why I'm starting this journal</h3>
         <p>After a PhD in Udine, a postdoc chasing neurons and adipocytes across Erlangen, Helsinki, and
         Stockholm, and now a year into building an independent research and consulting practice, I wanted a
-        single place to point people to — one link for a hiring committee, a collaborator, or a student asking
+        single place to point people to: one link for a hiring committee, a collaborator, or a student asking
         about the path into an international PhD.</p>
         <p>I'll use this space for short updates: a conference I've just come back from, a paper that made me
-        rethink an assumption, or a note for early-career researchers navigating academia across borders, as
-        I've had to a few times myself. Nothing polished or infrequent — just notes from the bench and beyond.</p>
+        rethink an assumption, or a note for early career researchers navigating academia across borders, as
+        I've had to a few times myself. Nothing polished, and not always frequent. Just notes from the bench
+        and beyond.</p>
       </article>
 
-      <div class="post-more">More field notes coming soon — check back after the next conference.</div>
+      <div class="post-more">More field notes coming soon. Check back after the next conference.</div>
     </div>
   </section>
 
@@ -693,6 +756,19 @@
   © 2026 Uzair Ali · Last updated July 2026
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous">&#8249;</button>
+  <img class="lb-img" src="" alt="">
+  <button class="lb-next" aria-label="Next">&#8250;</button>
+  <div class="lb-caption">
+    <div class="lb-title"></div>
+    <div class="lb-place"></div>
+    <div class="lb-photocap"></div>
+  </div>
+</div>
+
 <script>
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
@@ -704,6 +780,195 @@
     links.classList.remove('open');
     toggle.setAttribute('aria-expanded', false);
   }));
+
+  // ---------- Gallery data ----------
+  const albums = [
+    {
+      title: "Prevention of Childhood Obesity: Body, Brain and Society",
+      place: "Novo Nordisk Foundation, Copenhagen. March 2026",
+      images: [
+        {src:"podo-ownposter-thumb.jpg", full:"podo-ownposter-hero.jpg", caption:"Presenting my poster."},
+        {src:"podo-talk-thumb.jpg", full:"podo-talk-hero.jpg", caption:"Conference session."},
+        {src:"podo-group-thumb.jpg", full:"podo-group-hero.jpg", caption:"Group photo."}
+      ]
+    },
+    {
+      title: "Genomic Mechanisms of Disease",
+      place: "Novo Nordisk Foundation Science Cluster, Favrholm Campus, Copenhagen. 19 to 23 May 2025",
+      images: [
+        {src:"gmd-poster-thumb.jpg", full:"gmd-poster-hero.jpg", caption:"Poster session."},
+        {src:"gmd-badge-thumb.jpg", full:"gmd-badge-full.jpg", caption:"Conference badge and programme."},
+        {src:"podo-reception-thumb.jpg", full:"podo-reception-hero.jpg", caption:"Evening reception."}
+      ]
+    },
+    {
+      title: "CPHBAT 2022: Heterogeneity and Plasticity of Adipose Tissue",
+      place: "Copenhagen, Denmark. 30 May to 3 June 2022",
+      images: [
+        {src:"cphbat-program-thumb.jpg", full:"cphbat-program-full.jpg", caption:"Conference programme and abstract book."},
+        {src:"stockholm-labgroup-thumb.jpg", full:"stockholm-labgroup-full.jpg", caption:"With fellow conference attendees."}
+      ]
+    },
+    {
+      title: "BMedCon'18: 1st International Basic Medical Science Conference",
+      place: "Khyber Medical University, Peshawar. October 2018",
+      images: [
+        {src:"bmedcon-award-thumb.jpg", full:"bmedcon-award-full.jpg", caption:"Receiving the Best Presentation award."}
+      ]
+    },
+    {
+      title: "BATENERGY Conference 2025",
+      place: "University of Bonn, Germany. March 2025",
+      images: [
+        {src:"fau-poster-thumb.jpg", full:"fau-poster-full.jpg", caption:"Presenting a poster on TRPV1 signalling and adipocyte thermogenesis."}
+      ]
+    },
+    {
+      title: "1st International BioDesign Research Conference",
+      place: "Virtual. December 2020",
+      images: []
+    }
+  ];
+
+  const standalone = [
+    {src:"doudna-thumb.jpg", full:"doudna-full.jpg", caption:"With Prof. Jennifer Doudna."},
+    {src:"neuron-red-thumb.jpg", full:"neuron-red-full.jpg", caption:"Immunofluorescence imaging, primary neuronal culture."},
+    {src:"neuron-green-thumb.jpg", full:"neuron-green-full.jpg", caption:"Live cell fluorescence imaging, neuronal culture."}
+  ];
+
+  const placeholderClasses = ['p1','p2','p3','p4','p5','p6'];
+  let pIdx = 0;
+  const iconSvg = '<svg class="g-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>';
+
+  const grid = document.getElementById('galleryGrid');
+
+  albums.forEach((album, ai) => {
+    const card = document.createElement('div');
+    if(album.images.length === 0){
+      card.className = 'g-card ' + placeholderClasses[pIdx % placeholderClasses.length];
+      pIdx++;
+      card.innerHTML = iconSvg + '<div class="g-cap"><div class="g-event">' + album.title + '</div><div class="g-place">' + album.place + '</div></div>';
+    } else {
+      card.className = 'g-card photo album';
+      const countPill = album.images.length > 1 ? '<div class="count-pill">' + album.images.length + ' photos</div>' : '';
+      card.innerHTML =
+        '<div class="bg-layer visible" style="background-image:url(\'' + album.images[0].src + '\')"></div>' +
+        '<div class="bg-layer" style="background-image:url(\'' + album.images[0].src + '\')"></div>' +
+        countPill +
+        '<div class="g-cap"><div class="g-event">' + album.title + '</div><div class="g-place">' + album.place + '</div></div>';
+      card.addEventListener('click', () => openLightbox(ai, 0));
+      if(album.images.length > 1){
+        let idx = 0;
+        let showingFirst = true;
+        setInterval(() => {
+          idx = (idx + 1) % album.images.length;
+          const layers = card.querySelectorAll('.bg-layer');
+          const hidden = showingFirst ? layers[1] : layers[0];
+          const visible = showingFirst ? layers[0] : layers[1];
+          hidden.style.backgroundImage = "url('" + album.images[idx].src + "')";
+          hidden.classList.add('visible');
+          visible.classList.remove('visible');
+          showingFirst = !showingFirst;
+        }, 4200 + ai * 350);
+      }
+    }
+    grid.appendChild(card);
+  });
+
+  const standaloneGrid = document.getElementById('standaloneGrid');
+  standalone.forEach((item, si) => {
+    const card = document.createElement('div');
+    card.className = 'g-card photo';
+    card.innerHTML =
+      '<div class="bg-layer visible" style="background-image:url(\'' + item.src + '\')"></div>' +
+      '<div class="g-cap"><div class="g-event">' + item.caption + '</div></div>';
+    card.addEventListener('click', () => openStandaloneLightbox(si));
+    standaloneGrid.appendChild(card);
+  });
+
+  // ---------- Lightbox ----------
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('.lb-img');
+  const lbTitle = lb.querySelector('.lb-title');
+  const lbPlace = lb.querySelector('.lb-place');
+  const lbPhotocap = lb.querySelector('.lb-photocap');
+  const lbPrev = lb.querySelector('.lb-prev');
+  const lbNext = lb.querySelector('.lb-next');
+  let currentAlbum = null, currentIndex = 0, currentMode = null;
+
+  function openLightbox(albumIndex, imgIndex){
+    currentMode = 'album';
+    currentAlbum = albumIndex;
+    currentIndex = imgIndex;
+    renderLightbox();
+    lb.hidden = false;
+  }
+  function openStandaloneLightbox(i){
+    currentMode = 'standalone';
+    currentIndex = i;
+    renderLightbox();
+    lb.hidden = false;
+  }
+  function renderLightbox(){
+    let item, title, place;
+    if(currentMode === 'album'){
+      const album = albums[currentAlbum];
+      item = album.images[currentIndex];
+      title = album.title;
+      place = album.place;
+      lbPrev.style.display = album.images.length > 1 ? 'flex' : 'none';
+      lbNext.style.display = album.images.length > 1 ? 'flex' : 'none';
+    } else {
+      item = standalone[currentIndex];
+      title = '';
+      place = '';
+      lbPrev.style.display = 'none';
+      lbNext.style.display = 'none';
+    }
+    lbImg.src = item.full || item.src;
+    lbImg.alt = title || item.caption || '';
+    lbTitle.textContent = title;
+    lbPlace.textContent = place;
+    lbPhotocap.textContent = item.caption || '';
+  }
+  lbPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const album = albums[currentAlbum];
+    currentIndex = (currentIndex - 1 + album.images.length) % album.images.length;
+    renderLightbox();
+  });
+  lbNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const album = albums[currentAlbum];
+    currentIndex = (currentIndex + 1) % album.images.length;
+    renderLightbox();
+  });
+  lb.querySelector('.lb-close').addEventListener('click', () => lb.hidden = true);
+  lb.addEventListener('click', (e) => { if(e.target === lb) lb.hidden = true; });
+  document.addEventListener('keydown', (e) => {
+    if(lb.hidden) return;
+    if(e.key === 'Escape') lb.hidden = true;
+    if(e.key === 'ArrowLeft') lbPrev.click();
+    if(e.key === 'ArrowRight') lbNext.click();
+  });
+
+  // ---------- Booking form ----------
+  const bookingForm = document.getElementById('bookingForm');
+  bookingForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const service = this.service.value;
+    const message = this.message.value.trim();
+    const subject = encodeURIComponent('Appointment request from ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Service needed: ' + service + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:uzairali.biotech@gmail.com?subject=' + subject + '&body=' + body;
+  });
 </script>
 
 </body>
