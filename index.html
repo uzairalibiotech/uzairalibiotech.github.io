@@ -210,6 +210,23 @@
   .pub-group-label{font-family:var(--mono); font-size:0.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); margin:34px 0 14px;}
   .pub-group-label:first-child{margin-top:0;}
 
+  /* ---------- Projects ---------- */
+  .project-card{
+    background:var(--paper-dim); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px; margin-bottom:16px;
+  }
+  .project-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:10px;}
+  .project-title{font-family:var(--display); font-size:1.15rem; font-weight:600; margin:0; color:var(--ink);}
+  .project-tag{
+    font-family:var(--mono); font-size:0.72rem; color:var(--teal-dark); background:rgba(47,110,100,0.12);
+    padding:4px 10px; border-radius:999px; white-space:nowrap;
+  }
+  .project-desc{color:var(--ink-soft); font-size:0.94rem; margin:0 0 16px; max-width:68ch;}
+  .project-more{
+    border:1px dashed var(--line); border-radius:var(--radius); padding:22px; text-align:center;
+    color:var(--ink-soft); font-size:0.9rem;
+  }
+
   /* ---------- Gallery ---------- */
   .gallery-note{
     background:var(--paper-dim); border:1px dashed var(--line); border-radius:10px; padding:14px 18px;
@@ -320,7 +337,7 @@
 
   /* ---------- Print (used for "Download / Print CV") ---------- */
   @media print{
-    header, footer.site-footer, #hero, #about, #publications, #gallery, #services, #booking, #blog, #contact{display:none !important;}
+    header, footer.site-footer, #hero, #about, #publications, #projects, #gallery, #services, #booking, #blog, #contact{display:none !important;}
     body{background:#fff;}
     #cv{padding:0 !important;}
     .cv-actions{display:none !important;}
@@ -343,6 +360,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#cv">CV</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#blog">Blog</a></li>
@@ -624,6 +642,31 @@
         </div>
         <p class="pub-meta">Shabalina, I. G., et al. (2026, in preparation). <strong>Ali, U.</strong>, co author.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Projects</p>
+        <h2>Independent research &amp; code</h2>
+        <p>Open pipelines and analyses I maintain outside of formal publications.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <p class="project-title">RNA-seq Differential Expression &amp; Enrichment Pipeline</p>
+          <span class="project-tag">Python · pydeseq2</span>
+        </div>
+        <p class="project-desc">A reproduction of the analytical pipeline behind my 2022 <em>Tissue and Cell</em>
+        paper on SGBS adipocyte differentiation: low-count filtering, DESeq2-style differential expression,
+        gene-set enrichment, and the standard PCA, clustering heatmap, and volcano-plot figure set, runnable
+        end to end from a single command.</p>
+        <a class="btn btn-secondary" href="https://github.com/uzairalibiotech/rnaseq-adipocyte-browning-pipeline" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </div>
+
+      <div class="project-more">More projects coming soon.</div>
     </div>
   </section>
 
