@@ -178,7 +178,11 @@
 
   /* ---------- CV / timeline ---------- */
   .cv-actions{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;}
-  .subhead{font-family:var(--mono); font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin:44px 0 20px; font-weight:500;}
+  .subhead{
+    position:relative; font-family:var(--display); font-size:1.4rem; font-weight:600; color:var(--ink);
+    margin:60px 0 24px; padding-top:20px; border-top:1px solid var(--line); line-height:1.25;
+  }
+  .subhead::before{content:""; position:absolute; left:0; top:-2px; width:48px; height:3px; border-radius:2px; background:var(--gold);}
   .subhead:first-of-type{margin-top:8px;}
 
   .timeline{position:relative; padding-left:28px; border-left:2px solid var(--line);}
@@ -194,36 +198,17 @@
   .t-item .org{font-size:0.92rem; color:var(--ink-soft); font-style:italic;}
   .t-item .desc{margin-top:8px; font-size:0.94rem; color:var(--ink-soft); max-width:64ch;}
 
-  /* Research visits: highlighted panel */
-  .visits-panel{
-    position:relative; overflow:hidden; margin:52px 0 8px; padding:34px 32px 32px;
-    border-radius:18px; color:#fff;
-    background:linear-gradient(150deg, var(--teal-dark) 0%, var(--ink) 78%);
-    box-shadow:0 2px 4px rgba(28,43,57,0.08), 0 18px 40px rgba(28,43,57,0.18);
+  /* Timeline detail: bullet points and skills (used in International experience) */
+  .t-item .t-lead{margin-top:10px; font-size:0.96rem; color:var(--ink); max-width:66ch;}
+  .t-points{margin:10px 0 0; padding-left:20px; display:grid; gap:6px; max-width:66ch;}
+  .t-points li{font-size:0.94rem; color:var(--ink-soft); line-height:1.6;}
+  .t-points li::marker{color:var(--teal);}
+  .t-skills{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:14px;}
+  .t-skills-label{font-family:var(--mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--teal-dark); margin-right:4px;}
+  .t-skills span:not(.t-skills-label){
+    font-family:var(--mono); font-size:0.72rem; padding:4px 10px; border-radius:6px;
+    background:var(--paper-dim); border:1px solid var(--line); color:var(--ink-soft);
   }
-  .visits-panel .droplets{position:absolute; right:-18px; top:-18px; width:150px; height:150px; opacity:0.22; pointer-events:none;}
-  .visits-head{position:relative; max-width:60ch;}
-  .visits-head .eyebrow{color:#E7BE7A;}
-  .visits-head h3{color:#fff; font-size:clamp(1.5rem, 3vw, 1.85rem); margin-top:6px; line-height:1.2;}
-  .visits-head p{margin:10px 0 0; color:#CFE7E1; font-size:0.97rem;}
-  .visit-list{position:relative; margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  @media (max-width:820px){ .visit-list{grid-template-columns:1fr;} }
-  @media (max-width:600px){ .visits-panel{padding:26px 18px 20px;} .visit{padding:16px 16px 18px;} }
-  .visit{
-    background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16); border-top:3px solid var(--gold);
-    border-radius:12px; padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px;
-    transition:transform .15s ease, background .15s ease;
-  }
-  .visit:hover{transform:translateY(-2px); background:rgba(255,255,255,0.11);}
-  .visit-top{display:flex; flex-direction:column; align-items:flex-start; gap:8px;}
-  .visit .date{font-family:var(--mono); font-size:0.78rem; color:#E7BE7A; font-weight:500;}
-  .visit .country{
-    font-family:var(--mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:.08em;
-    padding:3px 9px; border-radius:999px; background:rgba(207,231,225,0.14); color:#CFE7E1;
-  }
-  .visit h4{margin:6px 0 0; font-family:var(--display); font-weight:600; font-size:1.18rem; color:#fff; line-height:1.25;}
-  .visit .visit-org{font-size:0.9rem; color:#DCE1E5; font-style:italic;}
-  .visit p{margin:6px 0 0; font-size:0.9rem; color:#C9D1D7; line-height:1.6;}
 
   .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
   @media (max-width:720px){ .skills-grid{grid-template-columns:1fr;} }
@@ -395,12 +380,8 @@
     .container{max-width:100%; padding:0;}
     .timeline{border-left:1px solid #999;}
     .t-item::before{background:#333; box-shadow:none; border:none;}
-    .visits-panel{background:#fff !important; box-shadow:none; border:1px solid #999; color:var(--ink); padding:20px; break-inside:avoid;}
-    .visits-panel .droplets{display:none;}
-    .visits-head h3, .visit h4{color:var(--ink);}
-    .visits-head .eyebrow, .visits-head p, .visit .date, .visit .country, .visit .visit-org, .visit p{color:var(--ink-soft);}
-    .visit{background:#fff; border:1px solid #bbb; border-top:2px solid #333;}
-    .visit .country{background:none; padding:0;}
+    .subhead::before{background:#333;}
+    .t-skills span:not(.t-skills-label){background:none;}
   }
 </style>
 </head>
@@ -475,7 +456,7 @@
       </div>
 
       <p style="max-width:68ch; color:var(--ink-soft); font-size:1.02rem;">
-        I'm a research scientist working at the junction of metabolic and neuro biology. Most of my published
+        I am a research scientist working at the junction of metabolic and neuro biology. Most of my published
         work focuses on adipocytes, particularly how they switch between energy storing and energy burning
         states, and how that connects to metabolic disease. Alongside this, my postdoctoral work on
         neuromodulation gave me hands on experience with primary neuronal assays, viral gene delivery, and
@@ -548,67 +529,103 @@
           <div class="date">Oct 2026 to Present</div>
           <h4>Postdoctoral Research Associate</h4>
           <div class="org">Dept. of Endocrinology and Diabetology, BG Universitätsklinikum Bergmannsheil, Bochum, Germany</div>
-          <p class="desc">Investigating mitochondrial DNA variants and their potential link to the development of
-          metabolic diseases in clinical studies. Contributing to clinical research studies involving human adipose
-          tissue and primary human adipocytes. Supervising junior colleagues in protocol optimization and the
-          execution of research projects. Performing data analysis and interpretation of experimental results, and
-          preparing manuscripts and research proposals.</p>
+          <ul class="t-points">
+            <li>Investigating mitochondrial DNA variants and their potential link to the development of metabolic
+            diseases in clinical studies.</li>
+            <li>Contributing to clinical research studies involving human adipose tissue and primary human
+            adipocytes.</li>
+            <li>Supervising junior colleagues in protocol optimization and the execution of research projects.</li>
+            <li>Performing data analysis and interpretation of experimental results.</li>
+            <li>Preparing manuscripts and research proposals.</li>
+          </ul>
         </div>
         <div class="t-item">
           <div class="date">Jul 2025 to Sep 2026</div>
           <h4>Independent Research Scientist &amp; Scientific Consultant</h4>
           <div class="org">Germany</div>
-          <p class="desc">Peer review for international scientific journals; invited lectures for biotechnology
-          and life sciences students on international academic pathways and research careers; freelance
-          scientific consulting; ongoing conference participation and academic networking.</p>
+          <ul class="t-points">
+            <li>Peer reviewed manuscripts for international scientific journals.</li>
+            <li>Collaborated with research groups on manuscript preparation and data analysis.</li>
+            <li>Delivered invited lectures and seminars for biotechnology and life sciences students on
+            international academic pathways and research careers.</li>
+            <li>Provided freelance scientific consulting services.</li>
+            <li>Participated in scientific conferences, professional training courses, and interdisciplinary
+            academic networking.</li>
+          </ul>
         </div>
         <div class="t-item">
           <div class="date">Dec 2023 to Jun 2025</div>
           <h4>Postdoctoral Research Associate</h4>
           <div class="org">Dept. of Chemistry &amp; Pharmacy, Friedrich Alexander Universitat Erlangen Nurnberg, Germany</div>
-          <p class="desc">Project: <strong>BRAINSTORM</strong> (EU Horizon EIC Pathfinder, Grant ID 101099355). Led
-          experimental work on neuromodulation using primary neuronal assays, viral transduction, calcium imaging,
-          and ion channel characterization; designed and optimized lentiviral constructs; coordinated project
-          deliverables and consortium reporting; supervised MSc and PhD students and managed BSL-2 workflows;
-          developed an independent research line on human adipocyte metabolism resulting in a first author
-          publication.</p>
+          <p class="t-lead">Project: <strong>BRAINSTORM</strong> (EU Horizon EIC Pathfinder, Grant ID 101099355)</p>
+          <ul class="t-points">
+            <li>Led experimental studies on neuromodulation using primary neuronal assays, viral transduction,
+            calcium imaging, and ion channel characterization.</li>
+            <li>Designed and optimized lentiviral constructs and transduction workflows for functional studies,
+            including transfection, RT-qPCR, immunofluorescence, and viability assays.</li>
+            <li>Coordinated project deliverables and contributed to manuscripts, proposals, and consortium
+            reporting.</li>
+            <li>Supervised MSc and PhD students and managed BSL-2 laboratory workflows.</li>
+            <li>Developed an independent research line on human adipocyte metabolism, resulting in a first author
+            publication in <em>Scientific Reports</em> (2025).</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <div class="date">Jul 2017 to Aug 2019</div>
+          <h4>Research Intern</h4>
+          <div class="org">Pathology Department, Khyber Teaching Hospital, Peshawar, Pakistan</div>
+          <ul class="t-points">
+            <li>Completed hands on laboratory training alongside M.Phil. studies, rotating through the molecular
+            biology, microbiology, histopathology, and chemical pathology sections.</li>
+            <li>Performed molecular diagnostic and RT-PCR based assays.</li>
+            <li>Supported research supervision, technical training, and diagnostic reporting.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="visits-panel">
-        <svg class="droplets" viewBox="0 0 220 220" aria-hidden="true">
-          <circle class="d1" cx="70" cy="60" r="34" fill="#2F6E64"/>
-          <circle class="d2" cx="150" cy="90" r="20" fill="#C68A33"/>
-          <circle class="d3" cx="110" cy="150" r="26" fill="#A63D46"/>
-          <circle class="d4" cx="170" cy="160" r="13" fill="#fff"/>
-        </svg>
-        <div class="visits-head">
-          <p class="eyebrow">International experience</p>
-          <h3>Research visits &amp; earlier posts</h3>
-          <p>Research stays abroad and early clinical training that shaped my work in viral vectors, adipocyte
-          biology, and molecular diagnostics.</p>
+      <p class="subhead">International experience</p>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">Aug 2024 · Helsinki, Finland</div>
+          <h4>Visiting Scientist</h4>
+          <div class="org">Faculty of Pharmacy, University of Helsinki, Finland</div>
+          <p class="t-lead">A research stay within the EU Horizon BRAINSTORM project, focused on building the
+          lentiviral tools used to deliver genetic constructs to neurons in our neuromodulation experiments.</p>
+          <ul class="t-points">
+            <li>Designed lentiviral constructs in silico and validated them in SnapGene, incorporating cell
+            specific promoters and reporter genes for targeted, traceable expression.</li>
+            <li>Built the vectors by Gibson Assembly cloning.</li>
+            <li>Produced lentiviral particles in HEK293 cells and optimized the production and transduction
+            workflow to improve efficiency and scalability.</li>
+            <li>Transferred the optimized constructs and workflow to the lentiviral transduction of primary
+            neurons at FAU Erlangen.</li>
+          </ul>
+          <div class="t-skills">
+            <span class="t-skills-label">Key skills</span>
+            <span>Lentiviral vector design</span><span>Gibson Assembly</span><span>SnapGene</span>
+            <span>Viral production</span><span>HEK293 culture</span>
+          </div>
         </div>
-        <div class="visit-list">
-          <div class="visit">
-            <div class="visit-top"><span class="country">Finland</span><span class="date">Aug 2024</span></div>
-            <h4>Visiting Scientist</h4>
-            <div class="visit-org">Faculty of Pharmacy, University of Helsinki</div>
-            <p>Designed and constructed lentiviral vectors via Gibson Assembly (in silico design and validation in
-            SnapGene); optimized viral production and transduction workflows in HEK293 cells.</p>
-          </div>
-          <div class="visit">
-            <div class="visit-top"><span class="country">Sweden</span><span class="date">Apr 2022 to Dec 2022</span></div>
-            <h4>Guest PhD Researcher</h4>
-            <div class="visit-org">Dept. of Molecular Biosciences, Stockholm University</div>
-            <p>CombiGene's CGT2 project: viral and plasmid mediated gene delivery in adipocyte and hepatic models,
-            primary murine adipocyte isolation, and in vivo viral delivery studies.</p>
-          </div>
-          <div class="visit">
-            <div class="visit-top"><span class="country">Pakistan</span><span class="date">Jul 2017 to Aug 2019</span></div>
-            <h4>Research Intern</h4>
-            <div class="visit-org">Pathology Dept., Khyber Teaching Hospital, Peshawar</div>
-            <p>Clinical laboratory rotations across molecular biology, microbiology, histopathology, and clinical
-            chemistry alongside Master's studies.</p>
+        <div class="t-item">
+          <div class="date">Apr 2022 to Dec 2022 · Stockholm, Sweden</div>
+          <h4>Guest PhD Researcher</h4>
+          <div class="org">Department of Molecular Biosciences, The Wenner-Gren Institute, Stockholm University, Sweden</div>
+          <p class="t-lead">A research stay during my PhD, funded by an Erasmus+ Traineeship. I worked
+          on CombiGene's CGT2 project, a gene therapy programme for partial lipodystrophy, a rare disorder of fat
+          distribution, and on mitochondrial research into the uncoupling protein UCP1.</p>
+          <ul class="t-points">
+            <li>Carried out viral and plasmid mediated gene delivery experiments in adipocyte and hepatic models.</li>
+            <li>Isolated and cultured primary murine brown and white adipocytes from BAT and WAT depots.</li>
+            <li>Took part in in vivo viral delivery studies and rodent experimental procedures, supported by
+            Laboratory Animal Science training at Karolinska Institute.</li>
+            <li>Performed mitochondrial functional analyses and imaging based characterization.</li>
+            <li>Contributed to work now available as a bioRxiv preprint on the differential inhibition of human
+            and mouse UCP1 in liver mitochondria (Shabalina et al., 2026).</li>
+          </ul>
+          <div class="t-skills">
+            <span class="t-skills-label">Key skills</span>
+            <span>Primary adipocyte isolation</span><span>Viral &amp; plasmid gene delivery</span>
+            <span>In vivo rodent studies</span><span>Mitochondrial function</span><span>Imaging</span>
           </div>
         </div>
       </div>
