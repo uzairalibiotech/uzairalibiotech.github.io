@@ -194,11 +194,36 @@
   .t-item .org{font-size:0.92rem; color:var(--ink-soft); font-style:italic;}
   .t-item .desc{margin-top:8px; font-size:0.94rem; color:var(--ink-soft); max-width:64ch;}
 
-  .visit-list{margin-top:22px; display:grid; gap:14px;}
-  .visit{background:var(--paper-dim); border-radius:10px; padding:14px 18px; border:1px solid var(--line);}
-  .visit .date{font-family:var(--mono); font-size:0.76rem; color:var(--teal-dark);}
-  .visit h5{margin:2px 0; font-family:var(--body); font-weight:600; font-size:0.96rem;}
-  .visit p{margin:0; font-size:0.88rem; color:var(--ink-soft);}
+  /* Research visits: highlighted panel */
+  .visits-panel{
+    position:relative; overflow:hidden; margin:52px 0 8px; padding:34px 32px 32px;
+    border-radius:18px; color:#fff;
+    background:linear-gradient(150deg, var(--teal-dark) 0%, var(--ink) 78%);
+    box-shadow:0 2px 4px rgba(28,43,57,0.08), 0 18px 40px rgba(28,43,57,0.18);
+  }
+  .visits-panel .droplets{position:absolute; right:-18px; top:-18px; width:150px; height:150px; opacity:0.22; pointer-events:none;}
+  .visits-head{position:relative; max-width:60ch;}
+  .visits-head .eyebrow{color:#E7BE7A;}
+  .visits-head h3{color:#fff; font-size:clamp(1.5rem, 3vw, 1.85rem); margin-top:6px; line-height:1.2;}
+  .visits-head p{margin:10px 0 0; color:#CFE7E1; font-size:0.97rem;}
+  .visit-list{position:relative; margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media (max-width:820px){ .visit-list{grid-template-columns:1fr;} }
+  @media (max-width:600px){ .visits-panel{padding:26px 18px 20px;} .visit{padding:16px 16px 18px;} }
+  .visit{
+    background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.16); border-top:3px solid var(--gold);
+    border-radius:12px; padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .visit:hover{transform:translateY(-2px); background:rgba(255,255,255,0.11);}
+  .visit-top{display:flex; flex-direction:column; align-items:flex-start; gap:8px;}
+  .visit .date{font-family:var(--mono); font-size:0.78rem; color:#E7BE7A; font-weight:500;}
+  .visit .country{
+    font-family:var(--mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:3px 9px; border-radius:999px; background:rgba(207,231,225,0.14); color:#CFE7E1;
+  }
+  .visit h4{margin:6px 0 0; font-family:var(--display); font-weight:600; font-size:1.18rem; color:#fff; line-height:1.25;}
+  .visit .visit-org{font-size:0.9rem; color:#DCE1E5; font-style:italic;}
+  .visit p{margin:6px 0 0; font-size:0.9rem; color:#C9D1D7; line-height:1.6;}
 
   .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
   @media (max-width:720px){ .skills-grid{grid-template-columns:1fr;} }
@@ -370,6 +395,12 @@
     .container{max-width:100%; padding:0;}
     .timeline{border-left:1px solid #999;}
     .t-item::before{background:#333; box-shadow:none; border:none;}
+    .visits-panel{background:#fff !important; box-shadow:none; border:1px solid #999; color:var(--ink); padding:20px; break-inside:avoid;}
+    .visits-panel .droplets{display:none;}
+    .visits-head h3, .visit h4{color:var(--ink);}
+    .visits-head .eyebrow, .visits-head p, .visit .date, .visit .country, .visit .visit-org, .visit p{color:var(--ink-soft);}
+    .visit{background:#fff; border:1px solid #bbb; border-top:2px solid #333;}
+    .visit .country{background:none; padding:0;}
   }
 </style>
 </head>
@@ -424,7 +455,6 @@
       <p class="lede">I study how cells reprogram their metabolism, from adipocytes that switch between storing and burning energy to neurons that respond to chemical and mechanical stimulation. My work moves between the bench (cell culture, viral vectors, confocal imaging) and the desk (RNA-seq, network pharmacology).</p>
       <p class="hero-meta">Bochum, Germany</p>
       <div class="cta-row">
-        <button class="btn btn-primary" onclick="window.print()">Download / Print CV</button>
         <a class="btn btn-secondary" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -545,25 +575,41 @@
         </div>
       </div>
 
-      <p class="subhead">Research visits &amp; earlier posts</p>
-      <div class="visit-list">
-        <div class="visit">
-          <div class="date">Aug 2024</div>
-          <h5>Visiting Scientist, Faculty of Pharmacy, University of Helsinki, Finland</h5>
-          <p>Designed and constructed lentiviral vectors via Gibson Assembly (in silico design and validation in
-          SnapGene); optimized viral production and transduction workflows in HEK293 cells.</p>
+      <div class="visits-panel">
+        <svg class="droplets" viewBox="0 0 220 220" aria-hidden="true">
+          <circle class="d1" cx="70" cy="60" r="34" fill="#2F6E64"/>
+          <circle class="d2" cx="150" cy="90" r="20" fill="#C68A33"/>
+          <circle class="d3" cx="110" cy="150" r="26" fill="#A63D46"/>
+          <circle class="d4" cx="170" cy="160" r="13" fill="#fff"/>
+        </svg>
+        <div class="visits-head">
+          <p class="eyebrow">International experience</p>
+          <h3>Research visits &amp; earlier posts</h3>
+          <p>Research stays abroad and early clinical training that shaped my work in viral vectors, adipocyte
+          biology, and molecular diagnostics.</p>
         </div>
-        <div class="visit">
-          <div class="date">Apr 2022 to Dec 2022</div>
-          <h5>Guest PhD Researcher, Dept. of Molecular Biosciences, Stockholm University, Sweden</h5>
-          <p>CombiGene's CGT2 project: viral and plasmid mediated gene delivery in adipocyte and hepatic models,
-          primary murine adipocyte isolation, and in vivo viral delivery studies.</p>
-        </div>
-        <div class="visit">
-          <div class="date">Jul 2017 to Aug 2019</div>
-          <h5>Research Intern, Pathology Dept., Khyber Teaching Hospital, Peshawar, Pakistan</h5>
-          <p>Clinical laboratory rotations across molecular biology, microbiology, histopathology, and clinical
-          chemistry alongside Master's studies.</p>
+        <div class="visit-list">
+          <div class="visit">
+            <div class="visit-top"><span class="country">Finland</span><span class="date">Aug 2024</span></div>
+            <h4>Visiting Scientist</h4>
+            <div class="visit-org">Faculty of Pharmacy, University of Helsinki</div>
+            <p>Designed and constructed lentiviral vectors via Gibson Assembly (in silico design and validation in
+            SnapGene); optimized viral production and transduction workflows in HEK293 cells.</p>
+          </div>
+          <div class="visit">
+            <div class="visit-top"><span class="country">Sweden</span><span class="date">Apr 2022 to Dec 2022</span></div>
+            <h4>Guest PhD Researcher</h4>
+            <div class="visit-org">Dept. of Molecular Biosciences, Stockholm University</div>
+            <p>CombiGene's CGT2 project: viral and plasmid mediated gene delivery in adipocyte and hepatic models,
+            primary murine adipocyte isolation, and in vivo viral delivery studies.</p>
+          </div>
+          <div class="visit">
+            <div class="visit-top"><span class="country">Pakistan</span><span class="date">Jul 2017 to Aug 2019</span></div>
+            <h4>Research Intern</h4>
+            <div class="visit-org">Pathology Dept., Khyber Teaching Hospital, Peshawar</div>
+            <p>Clinical laboratory rotations across molecular biology, microbiology, histopathology, and clinical
+            chemistry alongside Master's studies.</p>
+          </div>
         </div>
       </div>
 
@@ -604,6 +650,7 @@
 
       <p class="subhead">Achievements &amp; awards</p>
       <ul class="award-list">
+        <li><strong>Travel Grant</strong>, Boehringer Ingelheim Stiftung, for the 2026 Heinrich Wieland Prize Symposium, Munich</li>
         <li><strong>EU Horizon EIC Pathfinder funded Postdoctoral Researcher</strong>, BRAINSTORM project</li>
         <li><strong>PhD Scholarship</strong>, University of Udine</li>
         <li><strong>Erasmus+ Traineeship</strong>, funded research stay at Stockholm University</li>
@@ -618,7 +665,7 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Publications</p>
-        <h2>Peer reviewed work</h2>
+        <h2>Papers &amp; preprints</h2>
         <p>Full text and citation details are linked via DOI. Complete list on <a href="https://scholar.google.com/citations?hl=en&amp;user=L1JLHIMAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0002-3167-2841" target="_blank" rel="noopener">ORCID</a>.</p>
       </div>
 
@@ -644,15 +691,6 @@
 
       <div class="pub-card">
         <div class="pub-top">
-          <p class="pub-title">Graphene nanoplatelets–polythiophene nanocomposites for efficient dye degradation and cytotoxic activity against glioma cells</p>
-          <span class="pub-tag co">Co author</span>
-        </div>
-        <p class="pub-meta">Noreen, M.*, <strong>Ali, U.</strong>, &amp; Khattak, R. (2026). <em>Preprints</em>.</p>
-        <a class="pub-doi" href="https://doi.org/10.20944/preprints202606.0684.v1" target="_blank" rel="noopener">doi.org/10.20944/preprints202606.0684.v1</a>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-top">
           <p class="pub-title">Effects of allicin on human Simpson-Golabi-Behmel syndrome cells in mediating browning phenotype</p>
           <span class="pub-tag first">First author</span>
         </div>
@@ -669,6 +707,26 @@
         <a class="pub-doi" href="https://doi.org/10.1016/j.tice.2022.101822" target="_blank" rel="noopener">doi.org/10.1016/j.tice.2022.101822</a>
       </div>
 
+      <p class="pub-group-label">Preprints</p>
+
+      <div class="pub-card">
+        <div class="pub-top">
+          <p class="pub-title">Differential inhibition of human and mouse UCP1 in liver mitochondria reveals species-specific regulatory mechanisms</p>
+          <span class="pub-tag co">Co author</span>
+        </div>
+        <p class="pub-meta">Shabalina, I. G., et al. (2026). <em>bioRxiv</em>. <strong>Ali, U.</strong>, co author.</p>
+        <a class="pub-doi" href="https://doi.org/10.64898/2026.08.19.745785" target="_blank" rel="noopener">doi.org/10.64898/2026.08.19.745785</a>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-top">
+          <p class="pub-title">Graphene nanoplatelets–polythiophene nanocomposites for efficient dye degradation and cytotoxic activity against glioma cells</p>
+          <span class="pub-tag co">Co author</span>
+        </div>
+        <p class="pub-meta">Noreen, M.*, <strong>Ali, U.</strong>, &amp; Khattak, R. (2026). <em>Preprints</em>.</p>
+        <a class="pub-doi" href="https://doi.org/10.20944/preprints202606.0684.v1" target="_blank" rel="noopener">doi.org/10.20944/preprints202606.0684.v1</a>
+      </div>
+
       <p class="pub-group-label">In preparation</p>
       <div class="pub-card">
         <div class="pub-top">
@@ -676,13 +734,6 @@
           <span class="pub-tag first">First author</span>
         </div>
         <p class="pub-meta"><strong>Ali, U.</strong>, et al. (2026, in preparation).</p>
-      </div>
-      <div class="pub-card">
-        <div class="pub-top">
-          <p class="pub-title">Differential inhibition of human and mouse UCP1 in liver mitochondria reveals species specific regulatory mechanisms</p>
-          <span class="pub-tag co">Co author</span>
-        </div>
-        <p class="pub-meta">Shabalina, I. G., et al. (2026, in preparation). <strong>Ali, U.</strong>, co author.</p>
       </div>
     </div>
   </section>
@@ -698,13 +749,15 @@
 
       <div class="project-card">
         <div class="project-top">
-          <p class="project-title">RNA-seq Differential Expression &amp; Enrichment Pipeline</p>
-          <span class="project-tag">Python · pydeseq2</span>
+          <p class="project-title">RNA-seq Analysis Pipeline: Allicin and Adipocyte Browning</p>
+          <span class="project-tag">Python · pandas · SciPy</span>
         </div>
-        <p class="project-desc">A reproduction of the analytical pipeline behind my 2022 <em>Tissue and Cell</em>
-        paper on SGBS adipocyte differentiation: low-count filtering, DESeq2-style differential expression,
-        gene-set enrichment, and the standard PCA, clustering heatmap, and volcano-plot figure set, runnable
-        end to end from a single command.</p>
+        <p class="project-desc">A downstream analysis of the real genome-wide RNA-seq data from my 2023
+        <em>Frontiers in Endocrinology</em> paper on allicin and browning in human SGBS adipocytes. Built on the
+        paper's published Supplementary Table S1 (17,094 genes across three comparisons), it reproduces the
+        paper's reported numbers of up- and down-regulated genes exactly, then runs gene set enrichment
+        (Fisher's exact test), volcano plots, a Venn diagram of shared up-regulated genes, and a marker gene
+        heatmap, end to end from a single command.</p>
         <a class="btn btn-secondary" href="https://github.com/uzairalibiotech/rnaseq-adipocyte-browning-pipeline" target="_blank" rel="noopener">View on GitHub &rarr;</a>
       </div>
 
@@ -719,13 +772,9 @@
         <p class="eyebrow">Gallery</p>
         <h2>Conferences and academic activities</h2>
       </div>
-      <p class="gallery-note">Each card below is a small album. Click one to browse every photo from that event.
-      A couple are still waiting for their first photo, they will fill in after the next trip.</p>
+      <p class="gallery-note">Each card below is a small album. Click one to browse every photo from that event.</p>
 
       <div class="gallery-grid" id="galleryGrid"></div>
-
-      <p class="gallery-subhead">Research snapshots</p>
-      <div class="gallery-grid" id="standaloneGrid"></div>
     </div>
   </section>
 
@@ -840,7 +889,7 @@
 </main>
 
 <footer class="site-footer">
-  © 2026 Uzair Ali · Last updated October 2026
+  © 2026 Uzair Ali · Last updated November 2026
 </footer>
 
 <!-- LIGHTBOX -->
@@ -889,6 +938,13 @@
       ]
     },
     {
+      title: "With Prof. Jennifer Doudna",
+      place: "Nobel Laureate in Chemistry, 2020",
+      images: [
+        {src:"doudna-thumb.jpg", full:"doudna-full.jpg", caption:"With Prof. Jennifer Doudna."}
+      ]
+    },
+    {
       title: "CPHBAT 2022: Heterogeneity and Plasticity of Adipose Tissue",
       place: "Copenhagen, Denmark. 30 May to 3 June 2022",
       images: [
@@ -917,16 +973,6 @@
     }
   ];
 
-  const standalone = [
-    {src:"doudna-thumb.jpg", full:"doudna-full.jpg", caption:"With Prof. Jennifer Doudna."},
-    {src:"neuron-red-thumb.jpg", full:"neuron-red-full.jpg", caption:"Immunofluorescence imaging, primary neuronal culture."},
-    {src:"neuron-green-thumb.jpg", full:"neuron-green-full.jpg", caption:"Live cell fluorescence imaging, neuronal culture."},
-    {src:"qpcr-adipogenic-thumb.jpg", full:"qpcr-adipogenic-full.jpg", caption:"Adipogenic gene expression (ADIPOQ, CEBPA, FABP4, PPARg), computed from my own raw RT-qPCR Ct values. Mean \u00b1 SEM, n=3, BH-FDR adjusted. Data from Ali et al. 2025, Scientific Reports."},
-    {src:"qpcr-lipolytic-published-thumb.jpg", full:"qpcr-lipolytic-published-full.jpg", caption:"Lipolytic gene expression (ATGL, HSL, PLIN1, PGC1A). Values transcribed from the published Results text, not independently recomputed (no raw Ct data available for this plate). Ali et al. 2025, Scientific Reports."},
-    {src:"hub_genes_by_compound.png", full:"hub_genes_by_compound.png", caption:"Top predicted target genes by network degree for camphor, capsaicin, and caffeic acid. Real values from Ali et al. 2025, Scientific Reports, Supplementary Tables S2 to S4."},
-    {src:"target_gene_overlap_venn.png", full:"target_gene_overlap_venn.png", caption:"Shared predicted target genes across the three compounds (e.g. STAT3, ESR1, ESR2 shared by capsaicin and caffeic acid). Real network pharmacology data from the same paper."}
-  ];
-
   const placeholderClasses = ['p1','p2','p3','p4','p5','p6'];
   let pIdx = 0;
   const iconSvg = '<svg class="g-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>';
@@ -947,7 +993,7 @@
         '<div class="bg-layer" style="background-image:url(\'' + album.images[0].src + '\')"></div>' +
         countPill +
         '<div class="g-cap"><div class="g-event">' + album.title + '</div><div class="g-place">' + album.place + '</div></div>';
-      card.addEventListener('click', () => openLightbox(ai, 0));
+      card.addEventListener('click', () => openLightbox(album.images, 0, album.title, album.place));
       if(album.images.length > 1){
         let idx = 0;
         let showingFirst = true;
@@ -966,18 +1012,7 @@
     grid.appendChild(card);
   });
 
-  const standaloneGrid = document.getElementById('standaloneGrid');
-  standalone.forEach((item, si) => {
-    const card = document.createElement('div');
-    card.className = 'g-card photo';
-    card.innerHTML =
-      '<div class="bg-layer visible" style="background-image:url(\'' + item.src + '\')"></div>' +
-      '<div class="g-cap"><div class="g-event">' + item.caption + '</div></div>';
-    card.addEventListener('click', () => openStandaloneLightbox(si));
-    standaloneGrid.appendChild(card);
-  });
-
-  // ---------- Lightbox ----------
+  // ---------- Lightbox (gallery albums) ----------
   const lb = document.getElementById('lightbox');
   const lbImg = lb.querySelector('.lb-img');
   const lbTitle = lb.querySelector('.lb-title');
@@ -985,62 +1020,41 @@
   const lbPhotocap = lb.querySelector('.lb-photocap');
   const lbPrev = lb.querySelector('.lb-prev');
   const lbNext = lb.querySelector('.lb-next');
-  let currentAlbum = null, currentIndex = 0, currentMode = null;
+  let lbItems = [], lbIndex = 0, lbTitleText = '', lbPlaceText = '';
 
-  function openLightbox(albumIndex, imgIndex){
-    currentMode = 'album';
-    currentAlbum = albumIndex;
-    currentIndex = imgIndex;
-    renderLightbox();
-    lb.hidden = false;
-  }
-  function openStandaloneLightbox(i){
-    currentMode = 'standalone';
-    currentIndex = i;
+  function openLightbox(items, index, title, place){
+    lbItems = items;
+    lbIndex = index;
+    lbTitleText = title || '';
+    lbPlaceText = place || '';
     renderLightbox();
     lb.hidden = false;
   }
   function renderLightbox(){
-    let item, title, place;
-    if(currentMode === 'album'){
-      const album = albums[currentAlbum];
-      item = album.images[currentIndex];
-      title = album.title;
-      place = album.place;
-      lbPrev.style.display = album.images.length > 1 ? 'flex' : 'none';
-      lbNext.style.display = album.images.length > 1 ? 'flex' : 'none';
-    } else {
-      item = standalone[currentIndex];
-      title = '';
-      place = '';
-      lbPrev.style.display = 'none';
-      lbNext.style.display = 'none';
-    }
+    const item = lbItems[lbIndex];
+    const multi = lbItems.length > 1;
+    lbPrev.style.display = multi ? 'flex' : 'none';
+    lbNext.style.display = multi ? 'flex' : 'none';
     lbImg.src = item.full || item.src;
-    lbImg.alt = title || item.caption || '';
-    lbTitle.textContent = title;
-    lbPlace.textContent = place;
+    lbImg.alt = item.alt || lbTitleText || item.caption || '';
+    lbTitle.textContent = lbTitleText;
+    lbPlace.textContent = lbPlaceText;
     lbPhotocap.textContent = item.caption || '';
   }
-  lbPrev.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const album = albums[currentAlbum];
-    currentIndex = (currentIndex - 1 + album.images.length) % album.images.length;
+  function stepLightbox(dir){
+    if(lbItems.length < 2) return;
+    lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
     renderLightbox();
-  });
-  lbNext.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const album = albums[currentAlbum];
-    currentIndex = (currentIndex + 1) % album.images.length;
-    renderLightbox();
-  });
+  }
+  lbPrev.addEventListener('click', (e) => { e.stopPropagation(); stepLightbox(-1); });
+  lbNext.addEventListener('click', (e) => { e.stopPropagation(); stepLightbox(1); });
   lb.querySelector('.lb-close').addEventListener('click', () => lb.hidden = true);
   lb.addEventListener('click', (e) => { if(e.target === lb) lb.hidden = true; });
   document.addEventListener('keydown', (e) => {
     if(lb.hidden) return;
     if(e.key === 'Escape') lb.hidden = true;
-    if(e.key === 'ArrowLeft') lbPrev.click();
-    if(e.key === 'ArrowRight') lbNext.click();
+    if(e.key === 'ArrowLeft') stepLightbox(-1);
+    if(e.key === 'ArrowRight') stepLightbox(1);
   });
 
   // ---------- Booking form ----------
